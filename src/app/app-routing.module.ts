@@ -3,7 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
+import { ViewPolicyComponent } from './view-policy/view-policy.component';
+import { AddPolicyComponent } from './add-policy/add-policy.component';
+import { ViewProfileComponent } from './view-profile/view-profile.component';
+import { ViewPolicyTableComponent } from './view-policy-table/view-policy-table.component';
 
 const routes: Routes = [
   {
@@ -26,8 +29,22 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    component: DashboardComponent,
+    component: DashboardComponent
   },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    children: [
+      {path: '', component: ViewPolicyComponent},
+      {path: 'viewPolicy', component: ViewPolicyComponent},
+      {path: 'viewPolicyTable', component: ViewPolicyTableComponent},
+      {path: 'addPolicy' , component: AddPolicyComponent},
+      {path: 'viewProfile', component: ViewProfileComponent},
+      
+
+    ]
+
+  }
 ];
 
 @NgModule({
