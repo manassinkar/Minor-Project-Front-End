@@ -16,4 +16,11 @@ export class PolicyService {
         return policy;
       }));
   }
+  viewPolicy()
+  {
+    return this.http.get<any>(`http://localhost:3000/policy/viewPolicy`).pipe(map(policy=>
+    {
+      return policy;
+    }));
+  }
 }
