@@ -29,13 +29,9 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    component: DashboardComponent
-  },
-  {
-    path: 'dashboard',
     component: DashboardComponent,
     children: [
-      {path: '', component: ViewPolicyComponent},
+      {path: '', component: ViewPolicyTableComponent},
       {path: 'viewPolicy', component: ViewPolicyComponent},
       {path: 'viewPolicyTable', component: ViewPolicyTableComponent},
       {path: 'addPolicy' , component: AddPolicyComponent},

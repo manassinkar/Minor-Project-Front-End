@@ -15,15 +15,15 @@ export class ViewPolicyComponent implements OnInit {
   ngOnInit() {
     //this.viewPolicy(this.policy)
     this.policy = JSON.parse(localStorage.getItem('policy'));
-    console.log(this.policy);
+    //console.log(this.policy);
     this.getRecommendation();
   }
   getRecommendation(){
     this.policyservice.Recommender(this.policy.index).subscribe(
       recommend=>
       {
-        this.policyrecommends = this.policy;
-        console.log(this.policyrecommends);
+        this.policyrecommends = recommend;
+        //console.log(this.policyrecommends);
       },
       error=>
       {
@@ -31,6 +31,15 @@ export class ViewPolicyComponent implements OnInit {
       }
     )
   }
-  
+  viewPolicy(policy: any)
+  {
+    localStorage.setItem('policy', JSON.stringify(policy));
+    this.ngOnInit();
+  }
+
+  back()
+  {
+    this.router.navigate(['/dashboard']);
+  }
   
 }
