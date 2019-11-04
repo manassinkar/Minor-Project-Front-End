@@ -23,6 +23,27 @@
             
         </tr>
     </table>
+    <table *ngIf="recommend" class="table table-hover">
+        <tr>
+            <th>Policy Name</th>
+            <th>Compamy Name</th>
+            <th>Cover INL</th>
+            <th>Cashless Hospitals</th>
+            <th>Monthly Premium</th>
+            <th>Yearly Premium</th>
+            
+        </tr>
+        <tr *ngFor="let recommend of policyrecommends">
+        <tr>
+            <td>{{policy.policyName}}</td>
+            <td>{{policy.companyName}}</td>
+            <td>{{policy.coverInL}}</td>
+            <td>{{policy.cashlessHospitals}}</td>
+            <td>{{policy.premiumMonthly}}</td>
+            <td>{{policy.premiumYearly}}</td>
+            <td *ngIf="!admin"><button (click)="ngOnInit()" class="btn btn-primary" style="background-color: #DCDCDC;color: black;border-color: black;">Select Policy</button></td>
+        </tr>
+    </table>
     <div class="alert alert-danger w-100 mt-3" *ngIf="errMsg">{{errMsg}}</div>
     <div class="alert alert-danger w-100 mt-3" *ngIf="!policy">No Policy Found</div>
 </div>

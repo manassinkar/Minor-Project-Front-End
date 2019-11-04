@@ -23,4 +23,11 @@ export class PolicyService {
       return policy;
     }));
   }
+  Recommender(policyIndex: Number)
+  {
+    return this.http.get<any>(`http://localhost:3000/recommend?policyIndex=`+policyIndex).pipe(map(recommend =>
+    {
+      return recommend;
+    }));
+  }
 }
