@@ -1,13 +1,38 @@
 <br>
 <div class="container">
     <div *ngIf="policy" class="table table-hover">
-        <h2>Policy Details</h2>
-        <h4>Policy Name: {{policy.policyName}}</h4>
-        <h4>Company Name: {{policy.companyName}}</h4>
-        <h4>Cover(in Lakhs): {{policy.coverInL}}</h4>
-        <h4>Cashless Hospitals: {{policy.cashlessHospitals}}</h4>
-        <h4>Monthly Premium: Rs. {{policy.premiumMonthly}}/-</h4>
-        <h4>Yearly Premium: Rs. {{policy.premiumYearly}}/-</h4>
+            <h2>Policy Details</h2>
+            <div class="form-group">
+                <label><b>Policy Name: </b></label>
+                <input type="text" class="form-control" disabled placeholder="{{policy.policyName}}"><br>
+            </div>
+            <div class="form-group">
+                <label><b>Company Name: </b></label>
+                <input type="text" class="form-control" disabled placeholder="{{policy.companyName}}"><br>
+            </div>
+            <div class="form-group">
+                <label><b>Cover(in Lakhs): </b></label>
+                <input type="text" class="form-control" disabled placeholder="{{policy.coverInL}}"><br>
+            </div>
+            <div class="form-group">
+                <label><b>Cashless Hospitals: </b></label>
+                <input type="text" class="form-control" disabled placeholder=" {{policy.cashlessHospitals}}"><br>
+            </div>
+            <div class="form-group">
+                    <label><b>Monthly Premium: </b></label>
+                    <input type="text" class="form-control" disabled placeholder=" Rs. {{policy.premiumMonthly}}/-"><br>
+            </div>
+            <div class="form-group">
+                    <label><b>Yearly Premium: </b></label>
+                    <input type="text" class="form-control" disabled placeholder="Rs. {{policy.premiumYearly}}/"><br>
+            </div>
+        
+        <!-- <h6>Policy Name: {{policy.policyName}}</h6>
+        <h6>Company Name: {{policy.companyName}}</h6>
+        <h6>Cover(in Lakhs): {{policy.coverInL}}</h6>
+        <h6>Cashless Hospitals: {{policy.cashlessHospitals}}</h6>
+        <h6>Monthly Premium: Rs. {{policy.premiumMonthly}}/-</h6>
+        <h6>Yearly Premium: Rs. {{policy.premiumYearly}}/-</h6> -->
     </div>
     <hr><br>
     <button class="btn btn-primary" (click)="back()">Back to Main Policy List</button>
