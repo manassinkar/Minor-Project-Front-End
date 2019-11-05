@@ -12,6 +12,8 @@ export class DashboardComponent implements OnInit {
   public username: string;
   public navLinks: any;
   public role: string;
+  public chatbotOpen: boolean;
+
   public navInfo: any = [
     {
       role: 'user',
@@ -32,6 +34,7 @@ export class DashboardComponent implements OnInit {
   constructor(public router: Router, private authService: AuthService) { }
 
   ngOnInit() {
+    this.closeBot();
     this.username = JSON.parse(localStorage.getItem('currentUser')).username;
     this.admin = JSON.parse(localStorage.getItem('currentUser')).admin;
     this.admin==true?this.role = 'admin':this.role = 'user';
@@ -45,6 +48,16 @@ export class DashboardComponent implements OnInit {
   {
     this.authService.logout();
     this.router.navigate(['/login']);
+  }
+
+  openBot() {
+    document.getElementById("chatbot").style.display = "block";
+    this.chatbotOpen = true;
+  }
+  
+  closeBot() {
+    document.getElementById("chatbot").style.display = "none";
+    this.chatbotOpen = false;
   }
 
 
