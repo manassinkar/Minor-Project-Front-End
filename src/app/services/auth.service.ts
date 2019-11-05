@@ -39,6 +39,7 @@ export class AuthService {
   logout()
   {
     localStorage.removeItem('currentUser');
+    localStorage.removeItem('policy');
   }
 
 }

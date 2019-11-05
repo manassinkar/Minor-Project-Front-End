@@ -39,6 +39,7 @@ export class ViewPolicyComponent implements OnInit {
 
   back()
   {
+    localStorage.removeItem('policy');
     this.router.navigate(['/dashboard']);
   }
   
