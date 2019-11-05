@@ -16,8 +16,7 @@ export class DashboardComponent implements OnInit {
     {
       role: 'user',
       links: [
-        {tag: 'View Policy', link: './viewPolicy'},
-        {tag: 'View Policy Table', link: './viewPolicyTable'},
+        {tag: 'View Main Policy Table', link: './viewPolicyTable'},
         {tag: 'View Profile', link: './viewProfile'},
       ]
     },
